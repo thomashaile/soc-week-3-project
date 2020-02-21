@@ -3,8 +3,20 @@ debugger; // step through loading & testing
 
 // reapeat each character in a string, without changing the order
 function repeatCharacters(str, repetitions) {
-
-}
+ numRepeats = Number(repetitions);
+ var repeated = "";
+  if (Number.isNaN(numRepeats)) {
+    return "repetitions should be valid number";
+  }
+ else {
+   
+   for (var char of str){
+     repeated += char.repeat(numRepeats);
+   }
+   return repeated;
+  }
+   
+   }
 
 // declare and evaluate test cases for repeatCharacters
 const repeatCharactersTests = [
@@ -30,6 +42,9 @@ function repeatCharactersHandler() {
   debugger; // step through user actions
 
   // read & process user input
+  const userString = prompt("enter your word or characters ");
+  const userReptition = prompt("enter your repetition");
+  
 
   const numRepeatsIsANumber = typeof numRepeats === 'number';
   console.assert(numRepeatsIsANumber, 'cast numRepeats to type "number"');
@@ -37,11 +52,16 @@ function repeatCharactersHandler() {
   // execute core logic
 
   // display result to user
+  const result = repeatCharacters(userString, userReptition);
 
   // log action for developer
   console.log('\n-- repeatCharacters --');
   // user inputs
-  // result
+  console.log("userString:", "(" + typeof userString + "),", userString);
+  console.log("userOption:", "(" + typeof userReptition + "),", userReptition);
+  console.log("result:", "(" + typeof result + "),", result);
+  /// result
+  alert(result);
 }
 
 // attach handler to repeatCharacters button with an event listener

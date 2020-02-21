@@ -2,8 +2,20 @@ console.log('-- load & test choices --');
 debugger; // step through loading & testing
 
 // first argument is any string
-// second argument is what to do to that string
+// second argument is what  to do to that string
 function choices(str, option) {
+  var output;
+  if (option === 'big') {
+    output = str.toUpperCase();
+    return output;
+  }
+  else if (option === 'small') {
+    output = str.toLowerCase();
+    return output;
+  }
+  else {
+    return "invalid option";
+  }
 
 }
 
@@ -39,15 +51,22 @@ function choicesHandler() {
   debugger; // step through user actions
 
   // read & process user input
+  const userString = prompt("enter your word or string ");
+  const userOption = prompt("enter your option big for(capital) small for(small letter)");
 
   // execute core logic
 
   // display result to user
+  const result = choices(userString, userOption);
 
   // log action for developer
   console.log('\n-- choices --');
-  // user inputs
-  // result
+  /// user inputs
+  console.log("userString:", "(" + typeof userString + "),", userString);
+  console.log("userOption:", "(" + typeof userOption + "),", userOption);
+  console.log("result:", "(" + typeof result + "),", result);
+  /// result
+  alert(result);
 }
 
 // attach handler to choices button with an event listener
