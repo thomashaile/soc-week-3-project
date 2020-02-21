@@ -6,6 +6,8 @@ debugger; // step through loading & testing
   reverse the characters in each word, but leave the sentence in order
 */
 function reverseWords(str) {
+  var reversed = str.split('').reverse().join('');
+  return reversed;
 
 }
 
@@ -34,16 +36,18 @@ function reverseWordsHandler() {
 
   // read & process user input
 
-
+  const userString = prompt("enter your word or string to reverse");
   // execute core logic
 
-
   // display result to user
-
+  const result = reverseWords(userString);
 
   // log action for developer
   console.log('\n-- reverseWords --');
-  // user inputs
+  console.log("userString:", "(" + typeof userString + "),", userString);
+  console.log("result:", "(" + typeof result + "),", result);
+  /// result
+  alert(result);
   // result
 }
 
