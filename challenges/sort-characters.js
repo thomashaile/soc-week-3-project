@@ -9,8 +9,11 @@ debugger; // step through loading & testing
   to sort strings you rearrange the characters in charCode order
 */
 function sortCharacters(str) {
-
+  var char = str.split('').sort().join(' ');
+ return char;
 }
+
+
 
 // declare and evaluate test cases for sortCharacters
 const sortCharactersTests = [
@@ -38,16 +41,20 @@ function sortCharactersHandler() {
 
   // read & process user input
 
-
+  const userString = prompt("enter your word to sort");
   // execute core logic
 
 
   // display result to user
-
+  const result = sortCharacters(userString);
 
   // log action for developer
   console.log('\n-- sortCharacters --');
   // user inputs
+  console.log("userString:", "(" + typeof userString + "),", userString);
+  console.log("result:", "(" + typeof result + "),", result);
+  /// result
+  alert(result);
   // result
 }
 
